@@ -156,7 +156,7 @@
     <addaction name="actionEntryCopyPasswordEnc"/>  <!--EDIT: -->   
     <addaction name="menuEntryCopyAttribute"/>
     <addaction name="actionEntryAutoType"/>
-    <addaction name="actionEntryOpenUrl"/>
+    <!-- EDIT: <addaction name="actionEntryOpenUrl"/> -->
     <addaction name="actionSearch"/>
    </widget>
    <widget class="QMenu" name="menuGroups">
@@ -392,6 +392,8 @@
     <string>Perform Auto-Type</string>
    </property>
   </action>
+  
+  <!-- EDIT:
   <action name="actionEntryOpenUrl">
    <property name="enabled">
     <bool>false</bool>
@@ -400,6 +402,8 @@
     <string>Open URL</string>
    </property>
   </action>
+  -->
+  
   <action name="actionLockDatabases">
    <property name="enabled">
     <bool>false</bool>

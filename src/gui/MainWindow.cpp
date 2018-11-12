@@ -94,7 +94,7 @@ MainWindow::MainWindow()
     m_ui->actionEntryCopyUsername->setShortcut(Qt::CTRL + Qt::Key_B);
     m_ui->actionEntryCopyPassword->setShortcut(Qt::CTRL + Qt::Key_C);
     setShortcut(m_ui->actionEntryAutoType, QKeySequence::Paste, Qt::CTRL + Qt::Key_V);
-    m_ui->actionEntryOpenUrl->setShortcut(Qt::CTRL + Qt::Key_U);
+    //m_ui->actionEntryOpenUrl->setShortcut(Qt::CTRL + Qt::Key_U); //EDIT:
     m_ui->actionEntryCopyURL->setShortcut(Qt::CTRL + Qt::ALT + Qt::Key_U);
 
     new QShortcut(Qt::CTRL + Qt::Key_M, this, SLOT(showMinimized()));
@@ -202,8 +202,11 @@ MainWindow::MainWindow()
             SLOT(copyNotes()));
     m_actionMultiplexer.connect(m_ui->actionEntryAutoType, SIGNAL(triggered()),
             SLOT(performAutoType()));
-    m_actionMultiplexer.connect(m_ui->actionEntryOpenUrl, SIGNAL(triggered()),
-            SLOT(openUrl()));
+      
+    //EDIT:BEGIN        
+    //m_actionMultiplexer.connect(m_ui->actionEntryOpenUrl, SIGNAL(triggered()),
+    //        SLOT(openUrl()));
+	//EDIT:END
 
     m_actionMultiplexer.connect(m_ui->actionGroupNew, SIGNAL(triggered()),
             SLOT(createGroup()));
@@ -308,7 +311,7 @@ void MainWindow::setMenuActionState(DatabaseWidget::Mode mode)
             m_ui->actionEntryCopyNotes->setEnabled(singleEntrySelected && dbWidget->currentEntryHasNotes());
             m_ui->menuEntryCopyAttribute->setEnabled(singleEntrySelected);
             m_ui->actionEntryAutoType->setEnabled(singleEntrySelected);
-            m_ui->actionEntryOpenUrl->setEnabled(singleEntrySelected && dbWidget->currentEntryHasUrl());
+            //m_ui->actionEntryOpenUrl->setEnabled(singleEntrySelected && dbWidget->currentEntryHasUrl()); //EDIT:
             m_ui->actionGroupNew->setEnabled(groupSelected);
             m_ui->actionGroupEdit->setEnabled(groupSelected);
             m_ui->actionGroupDelete->setEnabled(groupSelected && dbWidget->canDeleteCurrentGroup());

@@ -50,7 +50,7 @@ scmp_filter_ctx ctx = seccomp_init(SCMP_ACT_ALLOW);
 seccomp_arch_add(ctx, SCMP_ARCH_NATIVE);
 //seccomp_rule_add(ctx, SCMP_ACT_ERRNO(EACCES), SCMP_SYS(socket), 1, SCMP_CMP(0, SCMP_CMP_EQ, pf));
 seccomp_rule_add(ctx, SCMP_ACT_ERRNO(EACCES), SCMP_SYS(socket), 0);
-seccomp_rule_add(ctx, SCMP_ACT_ERRNO(EACCES), SCMP_SYS(clone), 0);
+//seccomp_rule_add(ctx, SCMP_ACT_ERRNO(EACCES), SCMP_SYS(clone), 0);
 seccomp_rule_add(ctx, SCMP_ACT_ERRNO(EACCES), SCMP_SYS(fork), 0);
 
 seccomp_rule_add(ctx, SCMP_ACT_ERRNO(EACCES), SCMP_SYS(select), 0);
